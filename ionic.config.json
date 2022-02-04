@@ -1,5 +1,7 @@
 {
   "name": "IonicCrypto",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

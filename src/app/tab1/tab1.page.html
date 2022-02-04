@@ -1,17 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Crypto exchange
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>From</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="currencyFrom" placeholder="Select One">
+          <ion-select-option value="BTC">Bitcoin</ion-select-option>
+          <ion-select-option value="ETH">Ethereum</ion-select-option>
+          <ion-select-option value="LTC">Litecoin</ion-select-option>
+          <ion-select-option value="XLM">Stellar</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="currencyTo" placeholder="Select One">
+          <ion-select-option value="CZK">CZK</ion-select-option>
+          <ion-select-option value="EUR">EUR</ion-select-option>
+          <ion-select-option value="USD">USD</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Type</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="type" placeholder="Select One">
+          <ion-select-option value="Spot">spot</ion-select-option>
+          <ion-select-option value="Buy">buy</ion-select-option>
+          <ion-select-option value="Sell">sell</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button (click)="btnCalculateClicked()" expand="block">Calculate</ion-button>
+    </ion-list>
+  </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      {{currencyConvertion}} {{currencyToHolder}} 
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+  
